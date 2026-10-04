@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso de Econometría - Códigos</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f5f5f5;color:#222;line-height:1.6}
+header{background:#111;color:#fff;padding:28px 20px;text-align:center}
+nav{background:#333;padding:10px;text-align:center;position:sticky;top:0}
+nav a{color:#fff;text-decoration:none;margin:0 10px;font-weight:bold}
+.contenedor{max-width:1000px;margin:25px auto;background:#fff;padding:25px;box-shadow:0 0 8px rgba(0,0,0,.12)}
+h2{border-bottom:2px solid #222;padding-bottom:6px}
+pre{background:#111;color:#f5f5f5;padding:15px;overflow-x:auto;border-radius:5px}
+code{font-family:Consolas,monospace}
+.nota{background:#efefef;border-left:5px solid #444;padding:12px;margin:15px 0}
+footer{text-align:center;padding:20px;color:#555}
+</style>
+</head>
+<body>
+<header>
+<h1>Curso de Econometría</h1>
+<p>Códigos y aplicaciones prácticas</p>
+</header>
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#python">Python</a>
+<a href="#r">R</a>
+<a href="#stata">Stata</a>
+<a href="#series">Series de tiempo</a>
+</nav>
+<div class="contenedor" id="inicio">
+<h2>Presentación</h2>
+<p>Esta página reúne códigos básicos de Econometría para estimación, diagnóstico y análisis de series de tiempo.</p>
+<div class="nota">Los códigos pueden adaptarse a bases de datos del BCRP, INEI u otras fuentes.</div>
+
+<h2 id="python">1. Python: regresión lineal</h2>
+<pre><code>import pandas as pd
+import statsmodels.api as sm
+
+df = pd.read_csv("datos.csv")
+
+X = df[["x1", "x2"]]
+X = sm.add_constant(X)
+y = df["y"]
+
+modelo = sm.OLS(y, X).fit()
+print(modelo.summary())</code></pre>
+
+<h2 id="r">2. R: regresión lineal</h2>
+<pre><code>datos &lt;- read.csv("datos.csv")
+modelo &lt;- lm(y ~ x1 + x2, data = datos)
+summary(modelo)</code></pre>
+
+<h2 id="stata">3. Stata: regresión lineal</h2>
+<pre><code>import delimited "datos.csv", clear
+reg y x1 x2</code></pre>
+
+<h2 id="series">4. Series de tiempo: prueba ADF en Python</h2>
+<pre><code>from statsmodels.tsa.stattools import adfuller
+
+serie = df["y"].dropna()
+resultado = adfuller(serie)
+
+print("ADF:", resultado[0])
+print("p-valor:", resultado[1])</code></pre>
+
+<h2>5. Modelo ARIMA en Python</h2>
+<pre><code>from statsmodels.tsa.arima.model import ARIMA
+
+modelo_arima = ARIMA(serie, order=(1,1,1))
+resultado = modelo_arima.fit()
+
+print(resultado.summary())</code></pre>
+
+<h2>Interpretación básica</h2>
+<ul>
+<li>p-valor &lt; 0.05: evidencia estadística significativa.</li>
+<li>R²: proporción de variación explicada por el modelo.</li>
+<li>ADF con p-valor &lt; 0.05: la serie puede considerarse estacionaria.</li>
+</ul>
+</div>
+<footer>Curso de Econometría · Página HTML educativa</footer>
+</body>
+</html>
