@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Simulador Regional de Tabla Insumo-Producto · Puno</title>
+<style>
+:root{--azul:#0e4f78;--azul2:#176b96;--verde:#16715f;--verde2:#2e8b78;--claro:#f3f7f9;--linea:#cddbe2;--texto:#17313e;--amarillo:#fff4ce;--rojo:#a53b3b;--blanco:#fff;--gris:#5d7079}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#edf3f6;color:var(--texto);font:15.5px/1.52 Arial,Helvetica,sans-serif}header,main,footer{max-width:1250px;margin:auto}header{background:linear-gradient(120deg,#0e4f78,#197d86);color:#fff;padding:30px 34px;border-radius:0 0 20px 20px}header h1{margin:0 0 8px;font-size:clamp(26px,4vw,44px);line-height:1.1}header p{margin:6px 0;max-width:970px}.badge{display:inline-block;background:#fff;color:#0e4f78;padding:5px 9px;border-radius:20px;font-weight:700;margin:4px 7px 0 0;font-size:12px}.warning{background:#fff6dd;border-left:5px solid #d69a20;padding:13px 15px;border-radius:8px;margin:16px 0;color:#4f421b}main{background:#fff;padding:25px clamp(16px,3vw,38px) 55px}nav{display:flex;flex-wrap:wrap;gap:8px;margin:5px 0 22px}nav a,.btn{border:0;background:var(--azul);color:white;text-decoration:none;padding:10px 13px;border-radius:8px;font-weight:700;cursor:pointer}.btn.secondary{background:var(--verde)}.btn.light{background:#eaf2f6;color:#15465f;border:1px solid #b7ccd7}.btn.danger{background:#8b4444}.btn:hover{filter:brightness(.94)}section{padding:25px 0;border-bottom:2px solid #e3ecef;scroll-margin-top:10px}h2{color:#0c5f68;font-size:26px;margin:0 0 12px}h3{color:#164f6a;margin:18px 0 8px}h4{margin:12px 0 5px}.lead{font-size:1.08rem;background:#eef7f7;border-left:6px solid var(--verde);padding:16px 18px;border-radius:10px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:17px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.card{background:#fbfdfe;border:1px solid var(--linea);border-radius:11px;padding:15px}.card strong.big{display:block;font-size:27px;color:#0f6570}.formula{background:#f4f8ff;border-left:5px solid #356f9f;padding:12px 15px;margin:12px 0;font:16px/1.6 Georgia,serif}.note{background:#eef6fb;border-left:5px solid #2d7aa7;padding:12px 14px;border-radius:6px}.policy{background:#f0f8f3;border-left:5px solid var(--verde2);padding:13px 15px;border-radius:7px}.tablewrap{overflow:auto;border:1px solid #d8e2e7;border-radius:9px}table{border-collapse:collapse;width:100%;min-width:760px;background:white}th,td{padding:8px 9px;border:1px solid #d4dfe4;text-align:right;white-space:nowrap}th{background:#dcecf1;color:#143f52}th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:#f8fbfc;z-index:1}.heat td{font-size:12px}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px}.control{border:1px solid #cbd9de;border-radius:9px;padding:11px;background:#fbfdfe}.control label{font-weight:700;display:block;margin-bottom:5px}.control input[type=range]{width:100%}.control .val{font-weight:700;color:#0d6572}.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:14px 0}.kpi{padding:14px;border-radius:10px;background:#eef7f8;border:1px solid #bdd8dc}.kpi .num{display:block;font-size:24px;font-weight:800;color:#0d6670}.bars{display:grid;gap:8px}.barrow{display:grid;grid-template-columns:190px 1fr 70px;gap:8px;align-items:center}.track{height:20px;border-radius:10px;background:#edf2f4;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#2473a4,#29937e);border-radius:10px}.barval{text-align:right;font-weight:700}.svgbox{width:100%;height:315px;border:1px solid #d6e1e5;background:white;border-radius:10px}.matrixlegend{display:flex;gap:10px;align-items:center;font-size:12px;margin:8px 0}.sw{width:18px;height:14px;border-radius:3px}.presets{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.scenarioBtn{background:#eaf3f6;color:#174d66;border:1px solid #b9d0da;padding:9px 11px;border-radius:7px;cursor:pointer;font-weight:700}.scenarioBtn:hover{background:#dcebf0}.interp{background:#fff8e5;border-left:5px solid #d6a12e;padding:14px;border-radius:8px}.mini{font-size:12px;color:var(--gris)}.allocrow{display:grid;grid-template-columns:180px 1fr 70px;gap:10px;align-items:center;margin:8px 0}.quizq{border:1px solid #cfdee4;border-radius:10px;padding:14px;margin:12px 0;background:#fbfdfe}.quizq h4{margin-top:0}.quizq label{display:block;margin:7px 0;padding:7px;border-radius:6px}.quizq label:hover{background:#edf5f7}.feedback{margin-top:8px;font-weight:700}.correct{color:#13714d}.wrong{color:#a23a3a}.footerlinks a{color:#0e5f88}.pill{display:inline-block;background:#e1f1ec;color:#145e52;border-radius:20px;padding:5px 8px;font-weight:700;font-size:12px;margin:3px}.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.right{text-align:right}.smalltbl table{min-width:600px}@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}.barrow,.allocrow{grid-template-columns:130px 1fr 60px}header{padding:24px 18px}main{padding:20px 13px}.right{text-align:left}}@media print{body{background:#fff}header{border-radius:0}nav,.btn,.scenarioBtn,input[type=range],#quizActions{display:none!important}main{padding:0 20px}section{break-inside:avoid}.svgbox{height:260px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Economía regional · análisis estructural · política pública</div>
+  <h1>Simulador de Tabla Insumo-Producto para la Región Puno</h1>
+  <p>Herramienta interactiva para comprender encadenamientos productivos, multiplicadores de Leontief, impactos de cambios en la demanda final y diseño/evaluación de políticas públicas regionales.</p>
+  <span class="badge">8 sectores</span><span class="badge">Matriz 8×8</span><span class="badge">Escenarios de política</span><span class="badge">Evaluación de 10 preguntas</span>
+</header>
+<main>
+<nav>
+<a href="#intro">Fundamentos</a><a href="#puno">Puno 2024</a><a href="#matriz">Matriz regional</a><a href="#sim">Simulador</a><a href="#politica">Política pública</a><a href="#proy">Proyección</a><a href="#quiz">Evaluación</a><a href="#fuentes">Fuentes</a>
+</nav>
+<div class="warning"><b>Importante:</b> Puno no cuenta aquí con una TIO regional oficial publicada de 8 sectores. Este archivo es un <b>modelo didáctico regionalizado</b>: calibra la estructura sectorial con participaciones del VAB de Puno 2024 reportadas por el BCRP y utiliza coeficientes técnicos plausibles inspirados en relaciones de oferta-utilización nacionales del INEI. Los montos de la matriz son simulados y editables conceptualmente; no deben citarse como una matriz oficial de Puno.</div>
+
+<section id="intro">
+<h2>1. ¿Por qué es importante una Tabla Insumo-Producto?</h2>
+<p class="lead">Una Tabla Insumo-Producto (TIO) muestra <b>quién compra a quién dentro de la economía</b>. Permite pasar de una lectura sectorial aislada a una lectura de sistema: una inversión en construcción, por ejemplo, no solo eleva la construcción; también demanda manufacturas, transporte, comercio y servicios.</p>
+<div class="cards">
+<div class="card"><strong class="big">01</strong><b>Encadenamientos</b><p>Identifica sectores que arrastran a otros y sectores proveedores clave.</p></div>
+<div class="card"><strong class="big">02</strong><b>Multiplicadores</b><p>Estima efectos directos e indirectos de un cambio en demanda final.</p></div>
+<div class="card"><strong class="big">03</strong><b>Política pública</b><p>Permite comparar alternativas de inversión, compras públicas o promoción productiva.</p></div>
+<div class="card"><strong class="big">04</strong><b>Evaluación</b><p>Cuantifica producción inducida, valor agregado aproximado, empleo y concentración sectorial.</p></div>
+</div>
+<h3>Estructura básica del modelo</h3>
+<div class="formula">X = A·X + Y &nbsp;&nbsp; ⇒ &nbsp;&nbsp; X = (I − A)<sup>−1</sup>·Y</div>
+<div class="grid2">
+<div class="card"><b>X · Producción bruta sectorial</b><p>Vector de producción total requerida en cada sector.</p><b>A · Coeficientes técnicos</b><p>Cada a<sub>ij</sub> indica cuánto insumo del sector i necesita el sector j por cada unidad producida.</p></div>
+<div class="card"><b>Y · Demanda final</b><p>Consumo, inversión, gasto público y demanda externa final.</p><b>(I−A)<sup>−1</sup> · Inversa de Leontief</b><p>Captura las rondas sucesivas de demanda indirecta a través de la red productiva.</p></div>
+</div>
+<div class="note"><b>Lectura de una columna:</b> muestra la estructura de costos intermedios de un sector comprador. <b>Lectura de una fila:</b> muestra a qué sectores vende sus insumos un sector proveedor.</div>
+</section>
+
+<section id="puno">
+<h2>2. Estructura económica de Puno usada para calibrar el simulador</h2>
+<p>Para acercar el ejercicio a la estructura regional, se usan las participaciones del Valor Agregado Bruto (VAB) de Puno en 2024 reportadas por el BCRP. La calibración conserva el peso relativo de los principales sectores, pero el valor de producción bruta total se fija en <b>S/ 30 000 millones simulados</b> para fines pedagógicos.</p>
+<div class="grid2">
+<div><div id="shareBars" class="bars"></div></div>
+<div class="card"><h3 style="margin-top:0">Lectura rápida</h3><p><b>Agropecuario</b> tiene el mayor peso individual (19,9%). Le siguen <b>comercio</b> (12,0%), <b>administración pública</b> (8,4%), <b>manufactura</b> (7,9%), <b>construcción</b> (7,7%), <b>transporte</b> (6,9%) y <b>minería</b> (6,2%). El conjunto de otros servicios representa 31,0%.</p><p>Esta estructura sugiere que una política regional no debe evaluarse solo por el sector beneficiario inicial: los efectos sobre transporte, comercio, manufactura y servicios pueden ser relevantes.</p><div class="policy"><b>Pregunta de política:</b> ¿conviene gastar S/ 100 millones en infraestructura, agroindustria o servicios? La TIO ayuda a comparar el efecto sistémico de cada alternativa.</div></div>
+</div>
+</section>
+
+<section id="matriz">
+<div class="topline"><div><h2>3. Matriz regional didáctica</h2><p>Los coeficientes técnicos representan compras intermedias locales por unidad de producción.</p></div><button class="btn light" onclick="toggleMatrix()">Mostrar/ocultar matrices</button></div>
+<div id="matrixArea">
+<h3>Matriz A de coeficientes técnicos</h3>
+<div class="matrixlegend"><span class="sw" style="background:#edf7f6"></span>bajo <span class="sw" style="background:#9fd5ca"></span>medio <span class="sw" style="background:#2c8d7b"></span>alto</div>
+<div class="tablewrap"><table id="aTable" class="heat"></table></div>
+<h3>Matriz Z de transacciones intermedias</h3>
+<p class="mini">Millones de soles simulados. Z<sub>ij</sub> = a<sub>ij</sub> · X<sub>j</sub>.</p>
+<div class="tablewrap"><table id="zTable"></table></div>
+<h3>Cuenta sectorial de referencia</h3>
+<div class="tablewrap smalltbl"><table id="accountTable"></table></div>
+<h3>Multiplicadores de producción</h3>
+<div id="multBars" class="bars"></div>
+</div>
+</section>
+
+<section id="sim">
+<h2>4. Simulador de shocks en demanda final</h2>
+<p>Modifique la demanda final de uno o varios sectores. El modelo recalcula automáticamente la producción requerida mediante la inversa de Leontief.</p>
+<div class="presets">
+<button class="scenarioBtn" onclick="preset('agro')">🌾 Programa agroindustrial</button>
+<button class="scenarioBtn" onclick="preset('infra')">🛣️ Infraestructura vial</button>
+<button class="scenarioBtn" onclick="preset('serv')">🏨 Turismo y servicios</button>
+<button class="scenarioBtn" onclick="preset('mine')">⛏️ Proveedores mineros locales</button>
+<button class="scenarioBtn" onclick="preset('public')">🏛️ Compras públicas locales</button>
+<button class="scenarioBtn" onclick="preset('drought')">🌵 Sequía severa</button>
+<button class="scenarioBtn" onclick="preset('reset')">↺ Restablecer</button>
+</div>
+<div id="shockControls" class="controls"></div>
+<div style="margin:13px 0"><button class="btn" onclick="runShock()">Calcular impacto</button> <button class="btn secondary" onclick="downloadCSV()">Descargar resultados CSV</button> <button class="btn light" onclick="window.print()">Imprimir</button></div>
+<div class="kpis">
+<div class="kpi"><span class="mini">Shock neto en demanda final</span><span class="num" id="kShock">S/ 0</span><span>millones</span></div>
+<div class="kpi"><span class="mini">Cambio en producción total</span><span class="num" id="kOutput">S/ 0</span><span>millones</span></div>
+<div class="kpi"><span class="mini">Multiplicador del shock</span><span class="num" id="kMult">0,00</span><span>producción / demanda</span></div>
+<div class="kpi"><span class="mini">Valor agregado inducido</span><span class="num" id="kVA">S/ 0</span><span>millones aprox.</span></div>
+<div class="kpi"><span class="mini">Empleo inducido</span><span class="num" id="kJobs">0</span><span>empleos equivalentes*</span></div>
+</div>
+<div class="grid2">
+<div><h3>Cambio de producción por sector</h3><div id="impactBars" class="bars"></div></div>
+<div><h3>Interpretación automática</h3><div id="interpretation" class="interp">Seleccione un escenario o modifique los controles y pulse <b>Calcular impacto</b>.</div></div>
+</div>
+<p class="mini">*Los coeficientes de empleo son parámetros didácticos por S/ millón de producción y no constituyen estimaciones oficiales de empleo regional.</p>
+</section>
+
+<section id="politica">
+<h2>5. Diseñar y evaluar una política pública</h2>
+<p>Una política puede representarse como una inyección de demanda final distribuida entre sectores. El simulador permite comparar el costo del programa con producción, valor agregado, empleo aproximado y diversificación del impacto.</p>
+<div class="grid2">
+<div class="card">
+<h3 style="margin-top:0">Diseño de intervención</h3>
+<label><b>Presupuesto del programa (S/ millones)</b></label><input id="budget" type="number" min="1" value="100" style="width:100%;padding:9px;margin:6px 0 12px;border:1px solid #b8cbd4;border-radius:7px"/>
+<label><b>Objetivo principal</b></label><select id="objective" style="width:100%;padding:9px;border:1px solid #b8cbd4;border-radius:7px"><option value="output">Maximizar producción regional</option><option value="jobs">Maximizar empleo</option><option value="div">Diversificar encadenamientos</option><option value="res">Fortalecer resiliencia productiva</option></select>
+<div class="presets"><button class="scenarioBtn" onclick="allocPreset('jobs')">Empleo</button><button class="scenarioBtn" onclick="allocPreset('prod')">Producción</button><button class="scenarioBtn" onclick="allocPreset('div')">Diversificación</button><button class="scenarioBtn" onclick="allocPreset('reset')">Limpiar</button></div>
+<div id="allocation"></div>
+<div id="allocTotal" class="note">Asignación total: 100%</div>
+<button class="btn secondary" style="margin-top:12px" onclick="evaluatePolicy()">Evaluar política</button>
+</div>
+<div class="card"><h3 style="margin-top:0">Resultados de evaluación</h3><div id="policyResult"><p>Defina el presupuesto y la asignación sectorial para evaluar la intervención.</p></div></div>
+</div>
+<h3>Ruta recomendada para una política basada en TIO</h3>
+<div class="cards">
+<div class="card"><b>1. Problema público</b><p>Definir brecha: empleo, productividad, conectividad, diversificación, seguridad alimentaria u otra.</p></div>
+<div class="card"><b>2. Teoría de cambio</b><p>Precisar cómo la intervención altera la demanda final o la capacidad productiva.</p></div>
+<div class="card"><b>3. Simulación ex ante</b><p>Comparar escenarios de inversión y sus multiplicadores directos e indirectos.</p></div>
+<div class="card"><b>4. Criterios de decisión</b><p>Combinar eficiencia, empleo, valor agregado, equidad territorial, riesgo fiscal y sostenibilidad.</p></div>
+<div class="card"><b>5. Implementación</b><p>Definir metas, presupuesto, responsables, plazos y mecanismos de compras/proveedores.</p></div>
+<div class="card"><b>6. Evaluación ex post</b><p>Contrastar resultados observados con la línea base y escenario contrafactual.</p></div>
+</div>
+<div class="policy"><b>No confundir impacto económico con causalidad:</b> la TIO estima efectos estructurales bajo coeficientes fijos. Para afirmar que una política causó un cambio se requiere además un diseño de evaluación de impacto (experimental o cuasi-experimental cuando sea viable).</div>
+</section>
+
+<section id="proy">
+<h2>6. Proyección de oferta requerida, demanda y brecha</h2>
+<p>Esta sección proyecta la demanda final y la producción requerida durante cinco años. Sirve para discutir si la capacidad regional acompañaría el crecimiento de la demanda.</p>
+<div class="grid3">
+<div class="control"><label>Crecimiento anual de demanda final <span id="gVal" class="val">3,0%</span></label><input id="gDemand" type="range" min="-3" max="10" step="0.5" value="3" oninput="document.getElementById('gVal').textContent=this.value.replace('.',',')+'%';runProjection()"></div>
+<div class="control"><label>Crecimiento anual de capacidad <span id="cVal" class="val">2,0%</span></label><input id="gCapacity" type="range" min="-3" max="10" step="0.5" value="2" oninput="document.getElementById('cVal').textContent=this.value.replace('.',',')+'%';runProjection()"></div>
+<div class="control"><label>Horizonte</label><div class="val" style="font-size:21px">2024–2030</div><span class="mini">Escenario agregado, no pronóstico oficial.</span></div>
+</div>
+<svg id="projectionChart" class="svgbox" viewBox="0 0 900 315" preserveAspectRatio="none"></svg>
+<div id="projectionText" class="interp" style="margin-top:12px"></div>
+</section>
+
+<section id="quiz">
+<h2>7. Evaluación final · 10 preguntas</h2>
+<p>Seleccione una alternativa por pregunta. Al finalizar, el sistema mostrará su puntaje y retroalimentación.</p>
+<div id="quizBox"></div>
+<div id="quizActions"><button class="btn" onclick="gradeQuiz()">Calificar evaluación</button> <button class="btn light" onclick="resetQuiz()">Reiniciar</button></div>
+<div id="quizScore" class="kpi" style="margin-top:15px;display:none"></div>
+</section>
+
+<section id="fuentes">
+<h2>8. Fuentes, supuestos y límites</h2>
+<div class="grid2">
+<div class="card footerlinks"><h3 style="margin-top:0">Fuentes de referencia</h3><p><b>BCRP – Sucursal Puno.</b> Caracterización del departamento de Puno, estructura del VAB 2024.</p><p><a href="https://www.bcrp.gob.pe/docs/Sucursales/Puno/puno-caracterizacion.pdf" target="_blank">Abrir caracterización de Puno</a></p><p><b>INEI.</b> Matriz Insumo Producto 2007 y Cuadros de Oferta y Utilización nacionales.</p><p><a href="https://www1.inei.gob.pe/estadisticas/indice-tematico/matriz-insumo-producto-13673/" target="_blank">Abrir Matriz Insumo Producto INEI</a></p><p><a href="https://www1.inei.gob.pe/estadisticas/indice-tematico/cuadro-13600/" target="_blank">Abrir Cuadros de Oferta y Utilización INEI</a></p></div>
+<div class="card"><h3 style="margin-top:0">Supuestos</h3><span class="pill">coeficientes fijos</span><span class="pill">precios constantes dentro del escenario</span><span class="pill">sin restricciones de capacidad en Leontief</span><span class="pill">8 sectores agregados</span><span class="pill">regionalización didáctica</span><p>Para investigación aplicada real se recomienda construir una TIO regional con métodos de regionalización (por ejemplo, LQ/FLQ o RAS), datos de empleo/producción regional, comercio interregional, encuestas sectoriales y validación con especialistas.</p></div>
+</div>
+</section>
+</main>
+<footer><b>Simulador Regional de Tabla Insumo-Producto · Puno</b><br><span style="opacity:.85">Uso académico y de formación en políticas públicas. Los resultados son escenarios, no cifras oficiales.</span></footer>
+
+<script>
+const sectors=['Agropecuario','Minería','Manufactura','Construcción','Comercio','Transporte','Adm. pública','Otros servicios'];
+const shares=[19.9,6.2,7.9,7.7,12.0,6.9,8.4,31.0];
+const totalX=30000;
+const X0=shares.map(s=>totalX*s/100);
+// Filas = proveedor; columnas = sector comprador.
+const A=[
+[.10,.02,.20,.01,.02,.04,.01,.04],
+[.01,.08,.06,.04,.01,.03,.00,.03],
+[.07,.10,.18,.22,.03,.07,.01,.05],
+[.01,.05,.04,.08,.01,.05,.02,.05],
+[.03,.03,.05,.06,.08,.04,.01,.07],
+[.05,.08,.05,.05,.04,.12,.02,.08],
+[.02,.02,.02,.01,.03,.03,.03,.10],
+[.05,.08,.10,.10,.07,.10,.10,.18]
+];
+const jobCoef=[22,3,8,12,15,10,14,13]; // didáctico: empleos equivalentes por S/1m
+const leakage=[.08,.22,.25,.18,.12,.20,.05,.10]; // didáctico
+function eye(n){return Array.from({length:n},(_,i)=>Array.from({length:n},(_,j)=>i===j?1:0))}
+function matSub(a,b){return a.map((r,i)=>r.map((v,j)=>v-b[i][j]))}
+function matVec(M,v){return M.map(r=>r.reduce((s,x,j)=>s+x*v[j],0))}
+function inverse(M){const n=M.length,a=M.map((r,i)=>[...r,...eye(n)[i]]);for(let i=0;i<n;i++){let p=i;for(let r=i+1;r<n;r++)if(Math.abs(a[r][i])>Math.abs(a[p][i]))p=r;[a[i],a[p]]=[a[p],a[i]];let d=a[i][i];if(Math.abs(d)<1e-12)throw Error('Matriz singular');for(let j=0;j<2*n;j++)a[i][j]/=d;for(let r=0;r<n;r++){if(r===i)continue;let f=a[r][i];for(let j=0;j<2*n;j++)a[r][j]-=f*a[i][j]}}return a.map(r=>r.slice(n))}
+const L=inverse(matSub(eye(8),A));
+const Z=A.map((row,i)=>row.map((aij,j)=>aij*X0[j]));
+const intermediateDemand=matVec(A,X0);
+const Y0=X0.map((x,i)=>x-intermediateDemand[i]);
+const colSums=Array.from({length:8},(_,j)=>A.reduce((s,row)=>s+row[j],0));
+const vaCoeff=colSums.map(s=>1-s);
+const multipliers=Array.from({length:8},(_,j)=>L.reduce((s,row)=>s+row[j],0));
+let lastDeltaX=Array(8).fill(0),lastDeltaY=Array(8).fill(0);
+const fmt=n=>n.toLocaleString('es-PE',{maximumFractionDigits:1});
+const pct=n=>n.toLocaleString('es-PE',{maximumFractionDigits:1})+'%';
+
+function renderShares(){document.getElementById('shareBars').innerHTML=sectors.map((s,i)=>`<div class="barrow"><span>${s}</span><div class="track"><div class="fill" style="width:${shares[i]/31*100}%"></div></div><span class="barval">${shares[i].toFixed(1)}%</span></div>`).join('')}
+function heatColor(v){let t=Math.min(1,v/.22);let a=[237,247,246],b=[44,141,123];return `rgb(${Math.round(a[0]+(b[0]-a[0])*t)},${Math.round(a[1]+(b[1]-a[1])*t)},${Math.round(a[2]+(b[2]-a[2])*t)})`}
+function tableHeader(){return `<tr><th>Proveedor ↓ / Comprador →</th>${sectors.map(s=>`<th>${s}</th>`).join('')}</tr>`}
+function renderMatrices(){let at=tableHeader();A.forEach((r,i)=>{at+=`<tr><td><b>${sectors[i]}</b></td>${r.map(v=>`<td style="background:${heatColor(v)}">${v.toFixed(2)}</td>`).join('')}</tr>`});document.getElementById('aTable').innerHTML=at;let zt=tableHeader();Z.forEach((r,i)=>{zt+=`<tr><td><b>${sectors[i]}</b></td>${r.map(v=>`<td>${fmt(v)}</td>`).join('')}</tr>`});document.getElementById('zTable').innerHTML=zt;let ac=`<tr><th>Sector</th><th>Producción X</th><th>Demanda final Y</th><th>Insumos intermedios / X</th><th>Valor agregado / X</th><th>Multiplicador</th></tr>`;sectors.forEach((s,i)=>ac+=`<tr><td><b>${s}</b></td><td>${fmt(X0[i])}</td><td>${fmt(Y0[i])}</td><td>${pct(colSums[i]*100)}</td><td>${pct(vaCoeff[i]*100)}</td><td>${multipliers[i].toFixed(2)}</td></tr>`);document.getElementById('accountTable').innerHTML=ac;document.getElementById('multBars').innerHTML=sectors.map((s,i)=>`<div class="barrow"><span>${s}</span><div class="track"><div class="fill" style="width:${multipliers[i]/Math.max(...multipliers)*100}%"></div></div><span class="barval">${multipliers[i].toFixed(2)}</span></div>`).join('')}
+function toggleMatrix(){let e=document.getElementById('matrixArea');e.style.display=e.style.display==='none'?'block':'none'}
+function renderShockControls(){document.getElementById('shockControls').innerHTML=sectors.map((s,i)=>`<div class="control"><label>${s}: <span id="shockVal${i}" class="val">0%</span></label><input id="shock${i}" type="range" min="-40" max="60" step="1" value="0" oninput="document.getElementById('shockVal${i}').textContent=this.value+'%'"/><div class="mini">Demanda final base: S/ ${fmt(Y0[i])} millones</div></div>`).join('')}
+function preset(name){let v=Array(8).fill(0);if(name==='agro')v=[25,0,20,5,10,10,0,6];if(name==='infra')v=[3,5,18,45,8,18,5,10];if(name==='serv')v=[2,0,5,5,18,18,3,25];if(name==='mine')v=[3,30,18,8,8,15,2,12];if(name==='public')v=[10,0,10,5,12,5,25,8];if(name==='drought')v=[-30,-2,-10,-5,-8,-6,0,-5];sectors.forEach((_,i)=>{document.getElementById('shock'+i).value=v[i];document.getElementById('shockVal'+i).textContent=v[i]+'%'});runShock()}
+function runShock(){let rates=sectors.map((_,i)=>+document.getElementById('shock'+i).value/100);let dY=Y0.map((y,i)=>y*rates[i]);let dX=matVec(L,dY);lastDeltaX=dX;lastDeltaY=dY;let sy=dY.reduce((a,b)=>a+b,0),sx=dX.reduce((a,b)=>a+b,0),va=dX.reduce((s,x,i)=>s+x*vaCoeff[i],0),jobs=dX.reduce((s,x,i)=>s+x*jobCoef[i],0);document.getElementById('kShock').textContent='S/ '+fmt(sy);document.getElementById('kOutput').textContent='S/ '+fmt(sx);document.getElementById('kMult').textContent=(Math.abs(sy)>1e-9?(sx/sy).toFixed(2):'—');document.getElementById('kVA').textContent='S/ '+fmt(va);document.getElementById('kJobs').textContent=fmt(Math.round(jobs));let max=Math.max(...dX.map(Math.abs),1);document.getElementById('impactBars').innerHTML=sectors.map((s,i)=>`<div class="barrow"><span>${s}</span><div class="track"><div class="fill" style="width:${Math.abs(dX[i])/max*100}%;background:${dX[i]>=0?'linear-gradient(90deg,#2473a4,#29937e)':'linear-gradient(90deg,#c06b6b,#9d3f3f)'}"></div></div><span class="barval">${dX[i]>=0?'+':''}${fmt(dX[i])}</span></div>`).join('');let order=dX.map((v,i)=>({v,i})).sort((a,b)=>Math.abs(b.v)-Math.abs(a.v));let indirect=sx-sy;let directTxt=sy>=0?'expansivo':'contractivo';let txt=`El shock neto es <b>${directTxt}</b> por S/ ${fmt(Math.abs(sy))} millones. La producción regional simulada cambia en <b>${sx>=0?'+':''}${fmt(sx)} millones</b>. El sector con mayor variación es <b>${sectors[order[0].i]}</b> (${order[0].v>=0?'+':''}${fmt(order[0].v)}). `;if(Math.abs(sy)>1e-9)txt+=`El multiplicador agregado del escenario es <b>${(sx/sy).toFixed(2)}</b>: por cada S/ 1 de variación neta de demanda final, el modelo genera aproximadamente S/ ${(sx/sy).toFixed(2)} de cambio en producción total. `;txt+=`El efecto indirecto e inducido dentro de la red productiva equivale a aproximadamente <b>S/ ${fmt(indirect)} millones</b>. La lectura debe complementarse con restricciones de oferta, importaciones, financiamiento y capacidad institucional.`;document.getElementById('interpretation').innerHTML=txt}
+function downloadCSV(){let rows=[['Sector','Cambio_demanda_final','Cambio_produccion'],...sectors.map((s,i)=>[s,lastDeltaY[i].toFixed(2),lastDeltaX[i].toFixed(2)])];let csv=rows.map(r=>r.join(';')).join('\n');let blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='impacto_TIO_Puno.csv';a.click();URL.revokeObjectURL(a.href)}
+
+let alloc=[20,5,15,15,15,10,5,15];
+function renderAlloc(){document.getElementById('allocation').innerHTML=sectors.map((s,i)=>`<div class="allocrow"><span>${s}</span><input id="alloc${i}" type="range" min="0" max="100" step="1" value="${alloc[i]}" oninput="alloc[${i}]=+this.value;document.getElementById('allocV${i}').textContent=this.value+'%';updateAllocTotal()"><span id="allocV${i}" class="barval">${alloc[i]}%</span></div>`).join('');updateAllocTotal()}
+function updateAllocTotal(){let t=alloc.reduce((a,b)=>a+b,0),e=document.getElementById('allocTotal');e.textContent='Asignación total: '+t+'%'+(t===100?' ✓':' — debe sumar 100%');e.style.borderLeftColor=t===100?'#2e8b78':'#b05b42'}
+function allocPreset(n){if(n==='jobs')alloc=[35,0,8,15,15,10,2,15];if(n==='prod')alloc=[20,10,20,20,10,10,2,8];if(n==='div')alloc=[15,5,15,15,15,10,10,15];if(n==='reset')alloc=Array(8).fill(0);renderAlloc()}
+function evaluatePolicy(){let t=alloc.reduce((a,b)=>a+b,0);if(t!==100){document.getElementById('policyResult').innerHTML='<div class="warning"><b>Corrija la asignación:</b> los porcentajes deben sumar exactamente 100%.</div>';return}let b=+document.getElementById('budget').value||0;let dY=alloc.map(p=>b*p/100),dX=matVec(L,dY);let sx=dX.reduce((a,b)=>a+b,0),va=dX.reduce((s,x,i)=>s+x*vaCoeff[i],0),jobs=dX.reduce((s,x,i)=>s+x*jobCoef[i],0),leak=dY.reduce((s,y,i)=>s+y*leakage[i],0);let sharesImpact=dX.map(x=>Math.max(0,x)/Math.max(1e-9,sx));let hhi=sharesImpact.reduce((s,p)=>s+p*p,0);let top=dX.map((v,i)=>({v,i})).sort((a,b)=>b.v-a.v).slice(0,3);let obj=document.getElementById('objective').value;let score=0;if(obj==='output')score=Math.min(100,50*(sx/b));if(obj==='jobs')score=Math.min(100,jobs/(b*15)*50);if(obj==='div')score=Math.max(0,100*(1-hhi));if(obj==='res')score=Math.max(0,100*(1-hhi*.7-leak/b*.3));document.getElementById('policyResult').innerHTML=`<div class="kpis"><div class="kpi"><span class="mini">Producción generada</span><span class="num">S/ ${fmt(sx)}</span><span>millones</span></div><div class="kpi"><span class="mini">Multiplicador</span><span class="num">${(sx/b).toFixed(2)}</span><span>por S/ 1</span></div><div class="kpi"><span class="mini">Valor agregado</span><span class="num">S/ ${fmt(va)}</span><span>millones</span></div><div class="kpi"><span class="mini">Empleo aprox.</span><span class="num">${fmt(Math.round(jobs))}</span><span>equivalentes*</span></div></div><p><b>Sectores con mayor impacto:</b> ${top.map(o=>sectors[o.i]+' ('+fmt(o.v)+')').join(', ')}.</p><p><b>Fuga/importación paramétrica:</b> S/ ${fmt(leak)} millones (${pct(leak/b*100)} del presupuesto). <b>Concentración del impacto (HHI):</b> ${hhi.toFixed(3)}.</p><div class="policy"><b>Índice didáctico respecto al objetivo seleccionado:</b> ${Math.round(score)}/100. Este índice sirve para comparar escenarios dentro del simulador, no como indicador oficial.</div><h4>Cómo usar este resultado para decidir</h4><p>Compare al menos tres asignaciones con el mismo presupuesto. No elija automáticamente la de mayor multiplicador: incorpore equidad territorial, sostenibilidad ambiental, viabilidad institucional, mantenimiento, riesgos y población objetivo.</p>`}
+
+function runProjection(){let gd=+document.getElementById('gDemand').value/100,gc=+document.getElementById('gCapacity').value/100;let base=X0.reduce((a,b)=>a+b,0),years=[2024,2025,2026,2027,2028,2029,2030],req=[],cap=[];years.forEach((y,k)=>{req.push(base*Math.pow(1+gd,k));cap.push(base*Math.pow(1+gc,k))});let svg=document.getElementById('projectionChart'),W=900,H=315,pad=55;let vals=req.concat(cap),mn=Math.min(...vals)*.97,mx=Math.max(...vals)*1.03;let x=k=>pad+k*(W-2*pad)/(years.length-1),y=v=>H-pad-(v-mn)/(mx-mn)*(H-2*pad);let line=(arr,stroke)=>`<polyline fill="none" stroke="${stroke}" stroke-width="4" points="${arr.map((v,k)=>x(k)+','+y(v)).join(' ')}"/>`+arr.map((v,k)=>`<circle cx="${x(k)}" cy="${y(v)}" r="4" fill="${stroke}"/>`).join('');let axes=`<line x1="${pad}" y1="${H-pad}" x2="${W-pad}" y2="${H-pad}" stroke="#78909c"/><line x1="${pad}" y1="${pad}" x2="${pad}" y2="${H-pad}" stroke="#78909c"/>${years.map((yr,k)=>`<text x="${x(k)}" y="${H-25}" text-anchor="middle" font-size="13" fill="#435d68">${yr}</text>`).join('')}<text x="65" y="25" font-size="13" fill="#2473a4">Demanda/producción requerida</text><text x="310" y="25" font-size="13" fill="#2e8b78">Capacidad productiva</text>`;svg.innerHTML=axes+line(req,'#2473a4')+line(cap,'#2e8b78');let gap=req.at(-1)-cap.at(-1);document.getElementById('projectionText').innerHTML=gap>0?`En 2030, la producción requerida por el crecimiento de la demanda superaría la capacidad simulada en <b>S/ ${fmt(gap)} millones</b>. La política debería actuar sobre productividad, inversión y cuellos de botella sectoriales, no solo estimular demanda.`:`En 2030, la capacidad simulada superaría la producción requerida en <b>S/ ${fmt(Math.abs(gap))} millones</b>. El reto sería movilizar demanda, mercados y encadenamientos para utilizar esa capacidad sin generar desequilibrios.`}
+
+const quiz=[
+{q:'1. ¿Qué representa un coeficiente técnico aᵢⱼ?',a:['La participación del sector i en el PBI nacional','El insumo del sector i requerido por unidad de producción del sector j','La tasa de crecimiento del sector j'],c:1,e:'aᵢⱼ mide la compra intermedia del sector j al sector i por unidad de producción.'},
+{q:'2. En X = AX + Y, ¿qué representa Y?',a:['Demanda final','Importaciones únicamente','Valor agregado'],c:0,e:'Y agrupa la demanda final del modelo.'},
+{q:'3. ¿Para qué sirve (I−A)⁻¹?',a:['Para calcular solo el efecto directo','Para capturar efectos directos e indirectos de la demanda final','Para calcular inflación'],c:1,e:'La inversa de Leontief incorpora rondas sucesivas de requerimientos intersectoriales.'},
+{q:'4. Si el multiplicador de producción es 1,60, una inyección de S/ 100 millones genera aproximadamente:',a:['S/ 60 millones de producción total','S/ 100 millones exactamente','S/ 160 millones de producción total bajo los supuestos del modelo'],c:2,e:'100 × 1,60 = 160.'},
+{q:'5. ¿Cuál es una limitación básica del modelo de Leontief?',a:['Supone coeficientes técnicos fijos','No usa matrices','No permite analizar sectores'],c:0,e:'El modelo estándar asume relaciones técnicas fijas en el escenario.'},
+{q:'6. ¿Una TIO demuestra por sí sola que una política causó un aumento del empleo?',a:['Sí, siempre','No; para causalidad se requiere un diseño de evaluación de impacto','Solo si el gasto es público'],c:1,e:'La TIO estima impactos estructurales, pero no identifica causalidad por sí sola.'},
+{q:'7. ¿Por qué importa la fuga de importaciones?',a:['Porque reduce la parte del estímulo que activa proveedores regionales','Porque aumenta automáticamente el multiplicador regional','Porque elimina la demanda final'],c:0,e:'Una mayor fuga reduce encadenamientos dentro de la región.'},
+{q:'8. ¿Qué sector tiene el mayor peso individual en la calibración 2024 de Puno?',a:['Agropecuario','Minería','Construcción'],c:0,e:'El BCRP reporta 19,9% para agricultura, ganadería, caza y silvicultura.'},
+{q:'9. Para comparar dos políticas con igual presupuesto, ¿qué criterio es insuficiente por sí solo?',a:['Solo el multiplicador de producción','Combinar producción, empleo, equidad y sostenibilidad','Considerar riesgos y viabilidad'],c:0,e:'Una buena decisión pública requiere múltiples criterios, no solo el multiplicador.'},
+{q:'10. ¿Qué significa regionalizar una TIO nacional?',a:['Copiar sin cambios la matriz nacional','Adaptar coeficientes y flujos a la estructura productiva y comercio de la región','Eliminar los sectores de servicios'],c:1,e:'La regionalización ajusta relaciones nacionales usando información regional y comercio interregional.'}
+];
+function renderQuiz(){document.getElementById('quizBox').innerHTML=quiz.map((q,i)=>`<div class="quizq"><h4>${q.q}</h4>${q.a.map((a,j)=>`<label><input type="radio" name="q${i}" value="${j}"> ${a}</label>`).join('')}<div id="fb${i}" class="feedback"></div></div>`).join('')}
+function gradeQuiz(){let score=0;quiz.forEach((q,i)=>{let r=document.querySelector(`input[name=q${i}]:checked`),fb=document.getElementById('fb'+i);if(r&&+r.value===q.c){score++;fb.className='feedback correct';fb.textContent='Correcto. '+q.e}else{fb.className='feedback wrong';fb.textContent='Respuesta correcta: '+q.a[q.c]+'. '+q.e}});let e=document.getElementById('quizScore');e.style.display='block';e.innerHTML=`<span class="mini">Resultado final</span><span class="num">${score}/10</span><span>${score>=8?'Dominio alto':score>=6?'Dominio satisfactorio':'Conviene revisar los fundamentos y volver a intentar.'}</span>`;e.scrollIntoView({behavior:'smooth',block:'center'})}
+function resetQuiz(){document.querySelectorAll('#quizBox input').forEach(x=>x.checked=false);document.querySelectorAll('.feedback').forEach(x=>x.textContent='');document.getElementById('quizScore').style.display='none'}
+
+renderShares();renderMatrices();renderShockControls();renderAlloc();renderQuiz();runShock();runProjection();
+</script>
+</body>
+</html>
